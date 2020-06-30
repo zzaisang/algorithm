@@ -1,9 +1,6 @@
 package main.java.algorithm.programers.hash;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author zzai_sang
@@ -15,9 +12,10 @@ public class Camouflage {
     public static void main(String[] args) {
 
         String[][] arrayLv2 = {{"crow_mask", "face"},{"blue_sunglasses","face"},{"smoky_makeup","face"}};
+        final int solution2 = solution2(arrayLv2);
     }
 
-    public int solution(String[][] clothes) {
+    public static int solution(String[][] clothes) {
         int answer = 0;
 
         final HashMap<String,String> hashMap = new HashMap<>();
@@ -38,6 +36,18 @@ public class Camouflage {
         for (Map.Entry<String, String> stringStringEntry : entrySet) {
         }
 
+
+        return answer;
+    }
+
+    public static int solution2(String[][] clothes) {
+
+        for (String[] clothe : clothes) {
+            Arrays.sort(clothe);
+        }
+
+
+        int answer = 0;
 
         return answer;
     }
