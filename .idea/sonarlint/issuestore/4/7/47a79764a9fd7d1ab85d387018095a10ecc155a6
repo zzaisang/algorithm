@@ -1,8 +1,4 @@
 
-L
-java:S1481$"6Remove this unused "stringStringEntry" local variable.(¾üä‰
-I
-java:S1481".Remove this unused "solution2" local variable.(ñ–ôøÿÿÿÿ
->	java:S108$")Either remove or fill this block of code.(¾üä‰
-@
-java:S1481!"*Remove this unused "value" local variable.(Ÿí®
+[	java:S125"<This block of commented-out lines of code should be removed.(÷Òø¦úÿÿÿÿ8Ïì¾Ÿº.
+
+java:S1319"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(„şÉ€úÿÿÿÿ8Ïì¾Ÿº.
