@@ -20,13 +20,36 @@ public class AddStrings {
      * */
 
     public static void main(String[] args) {
-        String a = "a";
 
-        final char c = a.charAt(0);
+        final AddStrings addStrings = new AddStrings();
 
-        char bb = 98;
-        System.out.println(c);
-        System.out.println(bb);
+        System.out.println(addStrings.sol1("0","-9"));
+        System.out.println(addStrings.sol1("10","-9"));
+        System.out.println(addStrings.sol1("29","99"));
+        System.out.println(addStrings.sol1("-10","-9"));
+        System.out.println(addStrings.sol1("-1000","2"));
+        System.out.println(addStrings.sol1("-1000","1000"));
+
+    }
+
+    public String sol1(String num1, String num2){
+        int i = num1.length() - 1, j = num2.length() - 1;
+        int carry = 0;
+        StringBuilder res = new StringBuilder();
+        while (i >= 0 || j >= 0) {
+            int sum = carry;
+            if (i >= 0)
+                sum += num1.charAt(i--) - '0';
+            if (j >= 0)
+                sum += num2.charAt(j--) - '0';
+            carry = sum / 10;
+            res.append(sum % 10);
+
+        }
+        if (carry != 0) {
+            res.append(carry);
+        }
+        return res.reverse().toString();
     }
 
 
