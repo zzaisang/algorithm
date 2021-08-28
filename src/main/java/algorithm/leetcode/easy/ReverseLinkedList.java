@@ -1,6 +1,5 @@
 package main.java.algorithm.leetcode.easy;
 
-import lombok.ToString;
 
 /**
  * @author zzai_sang
@@ -34,7 +33,6 @@ public class ReverseLinkedList {
 
 }
 
-@ToString
 class ListNode{
     int val;
     ListNode next;

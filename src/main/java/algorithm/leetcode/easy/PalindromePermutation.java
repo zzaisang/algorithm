@@ -28,8 +28,9 @@ public class PalindromePermutation {
      * */
 
     public static void main(String[] args) {
-
-        final var carerac = canPermutePalindromeUsingSet("carerac");
+        String s = "code";
+        System.out.println(canPermutePalindromeUsingSet(s));
+        System.out.println(canPermutePalindromeUsingArray(s));
     }
 
     public static boolean canPermutePalindromeUsingSet(String s) {
@@ -39,5 +40,17 @@ public class PalindromePermutation {
                 set.remove(s.charAt(i));
         }
         return set.size() <= 1;
+    }
+
+    public static boolean canPermutePalindromeUsingArray(String s) {
+        int[] map = new int[128];
+        for (int i = 0; i < s.length(); i ++){
+            map[s.charAt(i)]++;
+        }
+        int count = 0;
+        for ( int key = 0; key < map.length && count <= 1; key++){
+            count += map[key] % 2;
+        }
+        return count <= 1;
     }
 }
