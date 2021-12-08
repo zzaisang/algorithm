@@ -1,7 +1,6 @@
 package main.java.algorithm.inflearn.섹션2_Array;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.Scanner;
 
 /**
  * @author zzai_sang
@@ -13,20 +12,21 @@ public class _02_보이는_학생 {
     public static void main(String[] args) {
         _02_보이는_학생 T = new _02_보이는_학생();
         Scanner sc = new Scanner(System.in);
-        Integer len = Integer.parseInt(sc.nextLine());
-        String s = sc.nextLine();
-        List<Integer> integerList = Arrays.stream(s.split(" "))
-                .map(Integer::parseInt)
-                .collect(Collectors.toList());
-        System.out.println(T.solution(integerList));
+        Integer len = sc.nextInt();
+        int[] arr = new int[len];
+        for(int i = 0; i < len; i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println(T.solution(len,arr));
     }
-    //오답
-    public Integer solution(List<Integer> integerList) {
-        integerList.sort(Comparator.naturalOrder());
-        int result = 0;
-        for(int i = 0; i < integerList.size() - 1; i++){
-            if(integerList.get(i) < integerList.get(i + 1)) result++;
-            else return result;
+    public Integer solution(final Integer len, int[] integerList) {
+        int max = integerList[0];
+        int result = 1;
+        for(int i = 1; i < len; i++){
+            if(max < integerList[i]){
+                result++;
+                max = integerList[i];
+            }
         }
         return result;
     }
